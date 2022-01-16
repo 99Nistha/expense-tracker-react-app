@@ -1,10 +1,10 @@
 import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
-  const expenses=[{title: 'Car Insurance', amount: 300.23, date: new Date(2021, 8, 13)},
-                  {title: 'Toilet Paper', amount: 49.35, date: new Date(2021, 5, 23)},
-                  {title: 'New TV', amount: 550.00, date: new Date(2022, 1, 2)},
-                  {title: 'Wooden Table', amount: 79.99, date: new Date(2021, 11, 12)}]; 
+  const expenses=[{title: 'Laptop', amount: 105000.00, date: new Date(2021, 6, 25)},
+                  {title: 'Internet Bill', amount: 12300.99, date: new Date(2022, 0, 1)},
+                  {title: 'Wooden Table', amount: 1200.34, date: new Date(2022, 0, 16)},
+                  {title: 'New Mobile', amount: 50000.00, date: new Date(2021, 9, 10)}]; 
 
   return ( 
     <div>
