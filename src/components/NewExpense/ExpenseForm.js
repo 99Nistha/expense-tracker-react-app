@@ -15,10 +15,15 @@ const ExpenseForm =() =>{
 
     const titleChangeHandle = (event) =>{
         // setEnternedTitle(event.target.value);  // we are using the setSate so that the value could be stored even if the entire conponents re evaluate for some reason
-        setUserInput({
-            ...userInput,  //we are using ...userInput, to set the previous value and then in the next line we are just overwritting the value of title
-            enteredTitle: event.target.value
+        // setUserInput({
+        //     ...userInput,  //we are using ...userInput, to set the previous value and then in the next line we are just overwritting the value of title
+        //     enteredTitle: event.target.value
+        // });
+
+        setUserInput((prevState)=>{
+            return{...prevState, enteredTitle: event.target.value};
         });
+        //this one is better bcz we are making sure that we are picking the latest previous values and not something impacted by scheduled time
     };
 
     const amountChangeHandle = (event) =>{
