@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import './ExpenseForm.css';
 
 const ExpenseForm =() =>{
 
-    const titleChangeHandle =(event) =>{
-        console.log(event.target.value);
-    }
+    const [enteredTitle, setEnternedTitle]= useState(''); // we can have multiple state, and are independent of each other
+    const [enteredAmount, setEnternedAmount]= useState('');
+    const [entereddate, setEnternedDate]= useState('');
+
+    const titleChangeHandle = (event) =>{
+        setEnternedTitle(event.target.value);  // we are using the setSate so that the value could be stored even if the entire conponents re evaluate for some reason
+    };
+
+    const amountChangeHandle = (event) =>{
+        setEnternedAmount(event.target.value);
+    };
+
+    const dateChangeHandle = (event) =>{
+        setEnternedDate(event.target.value);
+    };
 
     return <form>
         <div className="new-expense__controls">
@@ -15,11 +27,11 @@ const ExpenseForm =() =>{
             </div>
             <div className="new-expense__control">
                 <label>Amount</label>
-                <input type='number' min="0.01" step="0.01"/>
+                <input type='number' min="0.01" step="0.01" onChange={amountChangeHandle}/>
             </div>
             <div className="new-expense__control">
                 <label>Date</label>
-                <input type='date' min="2019-01-01" max="2022-12-31"/>
+                <input type='date' min="2019-01-01" max="2022-12-31" onChange={dateChangeHandle}/>
             </div>
         </div>
         <div className="new-expense__actions">
