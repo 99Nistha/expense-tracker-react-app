@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses";
+import React from "react";
 
 function App() {
   const expenses=[{title: 'Laptop', amount: 105000.00, date: new Date(2021, 6, 25)},
@@ -12,6 +13,16 @@ function App() {
       <Expenses items={expenses}/>
     </div>
   );
+
+  //underline JSX code tranformation with react
+  // return(
+  //   React.createElement(
+  //     'div',
+  //     {},
+  //     React.createElement('h2',{}, 'Let\'s get started!'),
+  //     React.createElement(Expenses,{items: expenses})
+  //   )
+  // );
 }
 
 export default App;
