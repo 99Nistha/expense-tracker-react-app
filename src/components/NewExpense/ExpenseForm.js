@@ -3,20 +3,38 @@ import './ExpenseForm.css';
 
 const ExpenseForm =() =>{
 
-    const [enteredTitle, setEnternedTitle]= useState(''); // we can have multiple state, and are independent of each other
-    const [enteredAmount, setEnternedAmount]= useState('');
-    const [entereddate, setEnternedDate]= useState('');
+    // const [enteredTitle, setEnternedTitle]= useState(''); // we can have multiple state, and are independent of each other
+    // const [enteredAmount, setEnternedAmount]= useState('');
+    // const [enteredDate, setEnternedDate]= useState('');
+
+    const [userInput, setUserInput]= useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+    })
 
     const titleChangeHandle = (event) =>{
-        setEnternedTitle(event.target.value);  // we are using the setSate so that the value could be stored even if the entire conponents re evaluate for some reason
+        // setEnternedTitle(event.target.value);  // we are using the setSate so that the value could be stored even if the entire conponents re evaluate for some reason
+        setUserInput({
+            ...userInput,  //we are using ...userInput, to set the previous value and then in the next line we are just overwritting the value of title
+            enteredTitle: event.target.value
+        });
     };
 
     const amountChangeHandle = (event) =>{
-        setEnternedAmount(event.target.value);
+        // setEnternedAmount(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredAmount: event.target.value
+        });
     };
 
     const dateChangeHandle = (event) =>{
-        setEnternedDate(event.target.value);
+        // setEnternedDate(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredDate: event.target.value
+        });
     };
 
     return <form>
