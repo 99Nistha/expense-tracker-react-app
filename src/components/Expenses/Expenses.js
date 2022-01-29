@@ -17,6 +17,7 @@ const Expenses = (props) => {
             <ExpensesFilter selected={changedYear} onFilterChange={filterChangeHandler}/>
             {props.items.map(expense=> (
                 <ExpenseItem 
+                    key={expense.id} // to let react uniquely identify data and add accordingly
                     title={expense.title} 
                     amount={expense.amount} 
                     date={expense.date}
