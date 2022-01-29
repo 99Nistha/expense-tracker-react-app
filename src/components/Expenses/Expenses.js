@@ -12,10 +12,14 @@ const Expenses = (props) => {
         setChangedYear(NewYear);
     };
 
+    const filteredExpense= props.items.filter(arr=>
+        {return arr.date.getFullYear().toString() ===changedYear}
+    )
+
     return(
             <Card className="expenses">
             <ExpensesFilter selected={changedYear} onFilterChange={filterChangeHandler}/>
-            {props.items.map(expense=> (
+            {filteredExpense.map(expense=> (
                 <ExpenseItem 
                     key={expense.id} // to let react uniquely identify data and add accordingly
                     title={expense.title} 
